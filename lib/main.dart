@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobile_app/screen/auth_screens/change_username_signup_screen.dart';
 import 'package:mobile_app/screen/auth_screens/forgot_password_screen.dart';
+import 'package:mobile_app/screen/auth_screens/otp_signup_screen.dart';
+import 'package:mobile_app/screen/auth_screens/otp_success_screen.dart';
 import 'package:mobile_app/screen/auth_screens/signin_screen.dart';
 import 'package:mobile_app/screen/auth_screens/signup_screen.dart';
+import 'package:mobile_app/screen/auth_screens/verify_email_signup_screen.dart';
+import 'package:mobile_app/screen/dashboard_screens/tab_screen.dart';
 import 'package:mobile_app/screen/walkthrough/splash_screen.dart';
 
 import 'data/cubits/auth/auth_cubits.dart';
@@ -30,7 +35,12 @@ class MyApp extends StatelessWidget {
           routes: {
             SignInScreen.routeName: (context) => const SignInScreen(),
             ForgotPasswordScreen.routeName: (context) => const ForgotPasswordScreen(),
-            SignUpScreen.routeName: (context) => const SignUpScreen(),
+            SignUpScreen.routeName: (context) => SignUpScreen(),
+            VerifyEmailSignUpScreen.routeName: (context) => const VerifyEmailSignUpScreen(),
+            OtpSignUpScreen.routeName: (context) => const OtpSignUpScreen(),
+            OtpSuccessScreen.routeName: (context) => const OtpSuccessScreen(),
+            ChangeUsernameSignUpScreen.routeName: (context) => const ChangeUsernameSignUpScreen(),
+            TabScreen.routeName: (context) => const TabScreen(),
           },
         )
     );

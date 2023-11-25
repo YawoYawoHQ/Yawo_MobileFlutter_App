@@ -15,7 +15,7 @@ class YawoWalkThrough extends StatefulWidget {
 }
 
 class YawoWalkThroughState extends State<YawoWalkThrough> {
-  List<WalkThrough> walkThroughList = generateWalkThroughMusic();
+  List<WalkThrough> walkThroughList = generateWalkSections();
 
   PageController pageController = PageController(initialPage: 0);
   int currentIndexPage = 0;
@@ -66,7 +66,7 @@ class YawoWalkThroughState extends State<YawoWalkThrough> {
                   ),
                 ),
                 Positioned(
-                  bottom: 200,
+                  bottom: 40,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -78,7 +78,7 @@ class YawoWalkThroughState extends State<YawoWalkThrough> {
 
                 onLastPage ?
                     Positioned(
-                        bottom: 185,
+                        bottom: 28,
                         right: 20,
                         child: TextButton(
                           onPressed: (){
@@ -95,7 +95,7 @@ class YawoWalkThroughState extends State<YawoWalkThrough> {
                     )
                     :
                 Positioned(
-                  bottom: 185,
+                  bottom: 28,
                     right: 20,
                     child: TextButton(
                         onPressed: (){
@@ -142,7 +142,7 @@ class YawoWalkThroughState extends State<YawoWalkThrough> {
 
 
 
-List<WalkThrough> generateWalkThroughMusic() {
+List<WalkThrough> generateWalkSections() {
   List<WalkThrough> allWalkThroughScreen = [];
   allWalkThroughScreen.add(WalkThrough.name("assets/images/1.png", 'Discover and Connect', 'Explore and Connect with travelers\nworldwide in a vibrant group'));
   allWalkThroughScreen.add(WalkThrough.name('assets/images/2.png', 'Share Adventures', 'Share your moments and inspire\nothers with your travel stories'));

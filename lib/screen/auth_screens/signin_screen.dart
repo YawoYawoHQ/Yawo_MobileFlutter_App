@@ -3,8 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_app/screen/auth_screens/signup_screen.dart';
 
+import '../../common/widgets/auth_widget.dart';
 import '../../util/constants/colors.dart';
 import '../../util/constants/images_path.dart';
+import '../dashboard_screens/tab_screen.dart';
 import 'forgot_password_screen.dart';
 
 
@@ -30,23 +32,7 @@ class _SignInScreenState extends State<SignInScreen> {
     super.initState();
   }
 
-  InputDecoration getInputDecoration(String hintext, IconData iconData) {
-    return InputDecoration(
-      enabledBorder: kDefaultInputBorder,
-      focusedBorder: kDefaultFocusInputBorder,
-      focusedErrorBorder: kDefaultFocusErrorBorder,
-      errorBorder: kDefaultFocusErrorBorder,
-      filled: true,
-      hintStyle: const TextStyle(color: kFormInputColor),
-      hintText: hintext,
-      fillColor: Colors.white70,
-      prefixIcon: Icon(
-        iconData,
-        color: kFormInputColor,
-      ),
-      contentPadding: const EdgeInsets.symmetric(vertical: 5),
-    );
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -150,7 +136,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                     },
                                   ),
                                 ),
-                                const SizedBox(height: 10),
+                                const SizedBox(height: 6),
                                 const Align(
                                   alignment: Alignment.centerLeft,
                                   child: Padding(
@@ -291,7 +277,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                   child: MaterialButton(
                                     elevation: 0,
                                     onPressed: () {
-
+                                        Navigator.of(context)
+                                            .pushNamed(TabScreen.routeName);
                                       // print(_userData['validity']);
                                     },
                                     color: mainColor,
@@ -307,7 +294,9 @@ class _SignInScreenState extends State<SignInScreen> {
                                     ),
                                     child: const Text(
                                       'Sign In',
+
                                       style: TextStyle(
+                                          fontSize: 16,
                                           fontWeight: FontWeight.bold),
                                     ),
                                   ),
@@ -402,11 +391,11 @@ class _SignInScreenState extends State<SignInScreen> {
 
                         ),
                       ),
-                      SizedBox(height: 40,),
+                      SizedBox(height: 50,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Don't have an account ?", style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500),),
+                          Text("I don't have an account ?", style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500),),
                           TextButton(
                               onPressed: (){
                                 Navigator.of(context)
@@ -429,16 +418,3 @@ class _SignInScreenState extends State<SignInScreen> {
 }
 
 
-const kDefaultInputBorder = OutlineInputBorder(
-  borderRadius: BorderRadius.all(Radius.circular(12.0)),
-  borderSide: BorderSide(color: Colors.white, width: 2),
-);
-
-const kDefaultFocusInputBorder = OutlineInputBorder(
-  borderRadius: BorderRadius.all(Radius.circular(12.0)),
-  borderSide: BorderSide(color: Colors.black54, width: 2),
-);
-const kDefaultFocusErrorBorder = OutlineInputBorder(
-  borderSide: BorderSide(color: Colors.red),
-  borderRadius: BorderRadius.all(Radius.circular(12.0)),
-);
