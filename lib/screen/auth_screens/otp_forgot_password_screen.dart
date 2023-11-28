@@ -6,18 +6,19 @@ import 'package:otp_text_field/style.dart';
 
 import '../../util/constants/colors.dart';
 import '../../util/constants/images_path.dart';
+import 'change_password_screen.dart';
 import 'otp_success_screen.dart';
 
 
-class OtpSignUpScreen extends StatefulWidget {
-  static const routeName = '/otp-signup';
-  const OtpSignUpScreen({super.key});
+class OtpForgotPasswordScreen extends StatefulWidget {
+  static const routeName = '/otp-forgot-password';
+  const OtpForgotPasswordScreen({super.key});
 
   @override
-  State<OtpSignUpScreen> createState() => _OtpSignUpScreenState();
+  State<OtpForgotPasswordScreen> createState() => _OtpForgotPasswordState();
 }
 
-class _OtpSignUpScreenState extends State<OtpSignUpScreen> {
+class _OtpForgotPasswordState extends State<OtpForgotPasswordScreen> {
 
 
   @override
@@ -119,9 +120,9 @@ class _OtpSignUpScreenState extends State<OtpSignUpScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                      TextButton(
-                          onPressed: (){},
-                          child: Text("Resend Code", style: TextStyle(color: mainColor, fontWeight: FontWeight.w500, fontSize: 16),))
+                    TextButton(
+                        onPressed: (){},
+                        child: Text("Resend Code", style: TextStyle(color: mainColor, fontWeight: FontWeight.w500, fontSize: 16),))
                   ],
                 ),
 
@@ -133,7 +134,7 @@ class _OtpSignUpScreenState extends State<OtpSignUpScreen> {
                       elevation: 0,
                       onPressed: () {
                         Navigator.of(context)
-                            .pushNamed(OtpSuccessScreen.routeName);
+                            .pushNamed(ChangePasswordScreen.routeName);
                         // print(_userData['validity']);
                       },
                       color: mainColor,

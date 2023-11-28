@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobile_app/screen/auth_screens/change_password_screen.dart';
+import 'package:mobile_app/screen/auth_screens/change_password_success_screen.dart';
 import 'package:mobile_app/screen/auth_screens/change_username_signup_screen.dart';
 import 'package:mobile_app/screen/auth_screens/forgot_password_screen.dart';
+import 'package:mobile_app/screen/auth_screens/otp_forgot_password_screen.dart';
 import 'package:mobile_app/screen/auth_screens/otp_signup_screen.dart';
 import 'package:mobile_app/screen/auth_screens/otp_success_screen.dart';
 import 'package:mobile_app/screen/auth_screens/signin_screen.dart';
@@ -34,12 +37,15 @@ class MyApp extends StatelessWidget {
           home:  const YawoSplashScreen(), //YawoWalkThrough(),
           routes: {
             SignInScreen.routeName: (context) => const SignInScreen(),
-            ForgotPasswordScreen.routeName: (context) => const ForgotPasswordScreen(),
             SignUpScreen.routeName: (context) => SignUpScreen(),
             VerifyEmailSignUpScreen.routeName: (context) => const VerifyEmailSignUpScreen(),
             OtpSignUpScreen.routeName: (context) => const OtpSignUpScreen(),
             OtpSuccessScreen.routeName: (context) => const OtpSuccessScreen(),
             ChangeUsernameSignUpScreen.routeName: (context) => const ChangeUsernameSignUpScreen(),
+            ForgotPasswordScreen.routeName: (context) => const ForgotPasswordScreen(),
+            OtpForgotPasswordScreen.routeName: (context) => const OtpForgotPasswordScreen(),
+            ChangePasswordScreen.routeName: (context) => const ChangePasswordScreen(),
+            ChangePasswordSuccessScreen.routeName: (context) => const ChangePasswordSuccessScreen(),
             TabScreen.routeName: (context) => const TabScreen(),
           },
         )
