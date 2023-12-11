@@ -10,6 +10,7 @@ import 'package:mobile_app/screen/auth_screens/otp_success_screen.dart';
 import 'package:mobile_app/screen/auth_screens/signin_screen.dart';
 import 'package:mobile_app/screen/auth_screens/signup_screen.dart';
 import 'package:mobile_app/screen/auth_screens/verify_email_signup_screen.dart';
+import 'package:mobile_app/screen/dashboard_screens/improve_feed_screen.dart';
 import 'package:mobile_app/screen/dashboard_screens/tab_screen.dart';
 import 'package:mobile_app/screen/walkthrough/splash_screen.dart';
 
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
             OtpForgotPasswordScreen.routeName: (context) => const OtpForgotPasswordScreen(),
             ChangePasswordScreen.routeName: (context) => const ChangePasswordScreen(),
             ChangePasswordSuccessScreen.routeName: (context) => const ChangePasswordSuccessScreen(),
+            ImproveFeedScreen.routeName: (context) => const ImproveFeedScreen(),
             TabScreen.routeName: (context) => const TabScreen(),
           },
         )

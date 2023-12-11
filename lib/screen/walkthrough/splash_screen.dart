@@ -52,7 +52,8 @@ class _YawoSplashScreenState extends State<YawoSplashScreen> {
         context,
         MaterialPageRoute(builder: (context) => const YawoWalkThrough()),
       );
-    } else {
+    } else
+    {
       await Future.delayed(const Duration(seconds: 2));
 
       setState(() {

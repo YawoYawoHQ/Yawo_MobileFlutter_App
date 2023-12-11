@@ -6,6 +6,7 @@ import 'package:mobile_app/screen/auth_screens/signup_screen.dart';
 import '../../common/widgets/auth_widget.dart';
 import '../../util/constants/colors.dart';
 import '../../util/constants/images_path.dart';
+import '../dashboard_screens/improve_feed_screen.dart';
 import '../dashboard_screens/tab_screen.dart';
 import 'forgot_password_screen.dart';
 
@@ -278,7 +279,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                     elevation: 0,
                                     onPressed: () {
                                         Navigator.of(context)
-                                            .pushNamed(TabScreen.routeName);
+                                            .pushNamed(ImproveFeedScreen.routeName);
                                       // print(_userData['validity']);
                                     },
                                     color: mainColor,
