@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobile_app/screen/HomePage/homePage.dart';
 import 'package:mobile_app/screen/auth_screens/change_password_screen.dart';
 import 'package:mobile_app/screen/auth_screens/change_password_success_screen.dart';
 import 'package:mobile_app/screen/auth_screens/change_username_signup_screen.dart';
@@ -37,6 +38,9 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: "Yawo Social App",
+          theme: ThemeData(
+            primarySwatch: Colors.amber,
+          ),
           home: const BottomNavigation(), //YawoWalkThrough(),
           routes: {
             SignInScreen.routeName: (context) => const SignInScreen(),
@@ -56,7 +60,9 @@ class MyApp extends StatelessWidget {
             ChangePasswordSuccessScreen.routeName: (context) =>
                 const ChangePasswordSuccessScreen(),
             ImproveFeedScreen.routeName: (context) => const ImproveFeedScreen(),
-            TabScreen.routeName: (context) => const TabScreen(),
+            BottomNavigation.routeName: (context) => const BottomNavigation(),
+            HomePage.routeName: (context) => const HomePage(),
+            // TabScreen.routeName: (context) => const TabScreen(),
           },
         ));
   }
