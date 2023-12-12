@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/screen/HomePage/Widgets/suggestedForYouCards.dart';
 
 class HomePage extends StatelessWidget {
   static const routeName = '/homePage';
@@ -66,6 +67,20 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 50,
               ),
+              SizedBox(
+                height: size.width * 0.5,
+                child: ListView.separated(
+                    physics: BouncingScrollPhysics(),
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.symmetric(horizontal: 24.0),
+                    itemBuilder: (context, index) {
+                      return SuggestedForYouCards();
+                    },
+                    separatorBuilder: (context, index) =>
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                    itemCount: 7),
+              )
             ],
           )),
     );
