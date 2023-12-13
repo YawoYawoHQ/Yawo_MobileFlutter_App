@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobile_app/screen/HomePage/homePage.dart';
 import 'package:mobile_app/screen/auth_screens/change_password_screen.dart';
 import 'package:mobile_app/screen/auth_screens/change_password_success_screen.dart';
 import 'package:mobile_app/screen/auth_screens/change_username_signup_screen.dart';
@@ -10,6 +11,7 @@ import 'package:mobile_app/screen/auth_screens/otp_success_screen.dart';
 import 'package:mobile_app/screen/auth_screens/signin_screen.dart';
 import 'package:mobile_app/screen/auth_screens/signup_screen.dart';
 import 'package:mobile_app/screen/auth_screens/verify_email_signup_screen.dart';
+import 'package:mobile_app/screen/HomePage/bottomNavManager/bottom_nav_manager.dart';
 import 'package:mobile_app/screen/dashboard_screens/improve_feed_screen.dart';
 import 'package:mobile_app/screen/dashboard_screens/tab_screen.dart';
 import 'package:mobile_app/screen/walkthrough/splash_screen.dart';
@@ -17,7 +19,7 @@ import 'package:mobile_app/screen/walkthrough/splash_screen.dart';
 import 'data/cubits/auth/auth_cubits.dart';
 import 'data/repositories/auth_repositories.dart';
 
-Future main() async{
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
@@ -29,30 +31,39 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-        providers:  [
-          BlocProvider<AuthCubit>(create: (context) => AuthCubit(AuthRepository())),
+        providers: [
+          BlocProvider<AuthCubit>(
+              create: (context) => AuthCubit(AuthRepository())),
         ],
-        child:  MaterialApp(
+        child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: "Yawo Social App",
-          home:  const YawoSplashScreen(), //YawoWalkThrough(),
+          theme: ThemeData(
+            primarySwatch: Colors.amber,
+          ),
+          home: const BottomNavigation(), //YawoWalkThrough(),
           routes: {
             SignInScreen.routeName: (context) => const SignInScreen(),
             SignUpScreen.routeName: (context) => SignUpScreen(),
-            VerifyEmailSignUpScreen.routeName: (context) => const VerifyEmailSignUpScreen(),
+            VerifyEmailSignUpScreen.routeName: (context) =>
+                const VerifyEmailSignUpScreen(),
             OtpSignUpScreen.routeName: (context) => const OtpSignUpScreen(),
             OtpSuccessScreen.routeName: (context) => const OtpSuccessScreen(),
-            ChangeUsernameSignUpScreen.routeName: (context) => const ChangeUsernameSignUpScreen(),
-            ForgotPasswordScreen.routeName: (context) => const ForgotPasswordScreen(),
-            OtpForgotPasswordScreen.routeName: (context) => const OtpForgotPasswordScreen(),
-            ChangePasswordScreen.routeName: (context) => const ChangePasswordScreen(),
-            ChangePasswordSuccessScreen.routeName: (context) => const ChangePasswordSuccessScreen(),
+            ChangeUsernameSignUpScreen.routeName: (context) =>
+                const ChangeUsernameSignUpScreen(),
+            ForgotPasswordScreen.routeName: (context) =>
+                const ForgotPasswordScreen(),
+            OtpForgotPasswordScreen.routeName: (context) =>
+                const OtpForgotPasswordScreen(),
+            ChangePasswordScreen.routeName: (context) =>
+                const ChangePasswordScreen(),
+            ChangePasswordSuccessScreen.routeName: (context) =>
+                const ChangePasswordSuccessScreen(),
             ImproveFeedScreen.routeName: (context) => const ImproveFeedScreen(),
-            TabScreen.routeName: (context) => const TabScreen(),
+            BottomNavigation.routeName: (context) => const BottomNavigation(),
+            HomePage.routeName: (context) => const HomePage(),
+            // TabScreen.routeName: (context) => const TabScreen(),
           },
-        )
-    );
+        ));
   }
 }
-
-
