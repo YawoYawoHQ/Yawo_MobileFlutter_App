@@ -15,6 +15,7 @@ import 'package:mobile_app/screen/HomePage/bottomNavManager/bottom_nav_manager.d
 import 'package:mobile_app/screen/dashboard_screens/improve_feed_screen.dart';
 import 'package:mobile_app/screen/dashboard_screens/tab_screen.dart';
 import 'package:mobile_app/screen/walkthrough/splash_screen.dart';
+import 'package:mobile_app/util/theme/yawo_theme.dart';
 
 import 'data/cubits/auth/auth_cubits.dart';
 import 'data/repositories/auth_repositories.dart';
@@ -38,9 +39,9 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: "Yawo Social App",
-          theme: ThemeData(
-            primarySwatch: Colors.amber,
-          ),
+          themeMode: ThemeMode.system,
+          theme: YawoTheme.lighTheme,
+          darkTheme: YawoTheme.darkTheme,
           home: const BottomNavigation(), //YawoWalkThrough(),
           routes: {
             SignInScreen.routeName: (context) => const SignInScreen(),

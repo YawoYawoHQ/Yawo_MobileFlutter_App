@@ -20,9 +20,9 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 20.0),
                 child: InkWell(
                   onTap: () {},
-                  child: const CircleAvatar(
-                    radius: 30,
-                    backgroundColor: Colors.deepOrange,
+                  child:  CircleAvatar(
+                    radius: 27,
+                    backgroundColor: Theme.of(context).primaryColor,
                     child: CircleAvatar(
                       radius: 25,
                       backgroundImage: AssetImage('assets/images/Profiles.png'),
@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(
                   'Welcome to Yawo Yawo',
-                  style: TextStyle(fontSize: 22),
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
                   //textAlign: TextAlign.center,
                 ),
               ),
@@ -59,16 +59,17 @@ class HomePage extends StatelessWidget {
               const Align(
                 alignment: Alignment.center,
                 child: Text(
-                  'When you follow people youll see the\n photos and videos they post here.',
+                  'When you follow people you will see the\n photos and videos they post here.',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontSize: 16, color: Colors.black, letterSpacing: 1),
+                      fontSize: 16, color: Colors.black, letterSpacing: 0),
                 ),
               ),
               SizedBox(
                 height: 50,
               ),
               SizedBox(
-                height: size.width * 0.5,
+                height: size.width * 0.6,
                 child: ListView.separated(
                     physics: BouncingScrollPhysics(),
                     shrinkWrap: true,

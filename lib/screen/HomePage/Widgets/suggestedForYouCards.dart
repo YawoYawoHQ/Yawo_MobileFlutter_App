@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SuggestedForYouCards extends StatefulWidget {
   const SuggestedForYouCards({super.key});
@@ -49,7 +50,7 @@ class _SuggestedForYouCardsState extends State<SuggestedForYouCards>
                     color: const Color.fromARGB(26, 151, 147, 173),
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  height: size.height * 0.6,
+                  height: size.height * 0.5,
                   width: size.width * 0.35,
                   child: LayoutBuilder(
                     builder: (context, constraints) => ClipRRect(
@@ -61,8 +62,8 @@ class _SuggestedForYouCardsState extends State<SuggestedForYouCards>
                             child: Align(
                               alignment: Alignment.topRight,
                               child: Icon(
-                                Icons.cancel_sharp,
-                                size: 24,
+                                FontAwesomeIcons.x,
+                                size: 13,
                               ),
                             ),
                           ),
@@ -97,7 +98,7 @@ class _SuggestedForYouCardsState extends State<SuggestedForYouCards>
                               padding: EdgeInsets.fromLTRB(25, 5, 25, 5),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(4),
-                                  color: Colors.deepOrange,
+                                  color: Theme.of(context).primaryColor,//Colors.deepOrange,
                                   shape: BoxShape.rectangle),
                               child: const Text(
                                 'Follow',
@@ -111,7 +112,7 @@ class _SuggestedForYouCardsState extends State<SuggestedForYouCards>
                           const Text(
                             'Suggested for you',
                             style: TextStyle(
-                              fontSize: 13,
+                              fontSize: 12,
                             ),
                           ),
                         ],
