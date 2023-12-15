@@ -9,6 +9,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      floatingActionButton: FloatingActionButton(
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+          // elevation: 0,
+          disabledElevation: 0,
+          shape: CircleBorder(),
+          autofocus: true,
+          backgroundColor: Colors.deepOrange,
+          onPressed: () {}),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
@@ -20,7 +32,7 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 20.0),
                 child: InkWell(
                   onTap: () {},
-                  child:  CircleAvatar(
+                  child: CircleAvatar(
                     radius: 27,
                     backgroundColor: Theme.of(context).primaryColor,
                     child: CircleAvatar(
@@ -43,7 +55,7 @@ class HomePage extends StatelessWidget {
                 thickness: 2,
               ),
               const SizedBox(
-                height: 50,
+                height: 30,
               ),
               const Align(
                 alignment: Alignment.center,
@@ -66,10 +78,10 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 50,
+                height: 30,
               ),
               SizedBox(
-                height: size.width * 0.6,
+                height: size.width * 0.55,
                 child: ListView.separated(
                     physics: BouncingScrollPhysics(),
                     shrinkWrap: true,

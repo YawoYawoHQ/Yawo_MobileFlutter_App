@@ -25,9 +25,6 @@ class _BottomNavigationState extends State<BottomNavigation> {
     screens = [
       const HomePage(),
       Container(
-        color: Colors.blue,
-      ),
-      Container(
         color: Colors.red,
       ),
       Container(
@@ -55,7 +52,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           elevation: 0,
           toolbarHeight: 80,
           backgroundColor: Colors.white,
-          leadingWidth: 110,
+          leadingWidth: 120,
           leading: const Padding(
             padding: const EdgeInsets.only(left: 16.0),
             child: Center(
@@ -92,8 +89,6 @@ class _BottomNavigationState extends State<BottomNavigation> {
                   icon: Icon(Icons.home),
                   label: 'home',
                 ),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.search), label: 'search'),
                 BottomNavigationBarItem(
                     icon: Icon(Icons.location_city), label: 'location'),
                 BottomNavigationBarItem(
