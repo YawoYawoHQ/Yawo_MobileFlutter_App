@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mobile_app/screen/HomePage/homePage2.dart';
 
 class SuggestedForYouCards extends StatefulWidget {
   const SuggestedForYouCards({super.key});
@@ -18,7 +19,6 @@ class _SuggestedForYouCardsState extends State<SuggestedForYouCards>
     super.initState();
     _controller =
         AnimationController(vsync: this, duration: Duration(milliseconds: 300));
-
     _animation = Tween<double>(begin: 1.0, end: 1.1).animate(_controller);
   }
 
@@ -93,12 +93,16 @@ class _SuggestedForYouCardsState extends State<SuggestedForYouCards>
                             height: 5,
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.of(context)
+                                  .pushNamed(HomePageTimeline.routeName);
+                            },
                             child: Container(
                               padding: EdgeInsets.fromLTRB(25, 5, 25, 5),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(4),
-                                  color: Theme.of(context).primaryColor,//Colors.deepOrange,
+                                  color: Theme.of(context)
+                                      .primaryColor, //Colors.deepOrange,
                                   shape: BoxShape.rectangle),
                               child: const Text(
                                 'Follow',

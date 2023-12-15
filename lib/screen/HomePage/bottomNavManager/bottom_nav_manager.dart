@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/common/widgets/customAppBar.dart';
 import 'package:mobile_app/screen/HomePage/homePage.dart';
 import 'package:nb_utils/nb_utils.dart';
 
@@ -48,33 +49,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          toolbarHeight: 80,
-          backgroundColor: Colors.white,
-          leadingWidth: 120,
-          leading: const Padding(
-            padding: const EdgeInsets.only(left: 16.0),
-            child: Center(
-                child: Text('Yawo Yawo',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 18))),
-          ),
-          actions: [
-            Padding(
-              padding: EdgeInsets.only(right: 16.0),
-              child: GestureDetector(
-                onTap: () {},
-                child: const CircleAvatar(
-                  radius: 20,
-                  backgroundImage: AssetImage('assets/images/Profiles.png'),
-                ),
-              ),
-            ),
-          ],
-        ),
+        appBar: const CustomAppBar(),
         body: screens[currentIndex],
         bottomNavigationBar: SizedBox(
             height: 60,
