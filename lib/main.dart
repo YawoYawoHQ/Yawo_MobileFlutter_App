@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
             ImproveFeedScreen.routeName: (context) => const ImproveFeedScreen(),
             BottomNavigation.routeName: (context) => const BottomNavigation(),
             HomePage.routeName: (context) => const HomePage(),
-            HomePageFeeds.routeName: (context) => const HomePageFeeds(),
+            HomePageTimeline.routeName: (context) => const HomePageTimeline(),
           },
         ));
   }

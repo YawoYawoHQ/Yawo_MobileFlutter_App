@@ -28,6 +28,7 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.only(left: 20.0),
             child: InkWell(

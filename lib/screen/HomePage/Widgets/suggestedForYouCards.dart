@@ -95,7 +95,7 @@ class _SuggestedForYouCardsState extends State<SuggestedForYouCards>
                           InkWell(
                             onTap: () {
                               Navigator.of(context)
-                                  .pushNamed(HomePageFeeds.routeName);
+                                  .pushNamed(HomePageTimeline.routeName);
                             },
                             child: Container(
                               padding: EdgeInsets.fromLTRB(25, 5, 25, 5),
