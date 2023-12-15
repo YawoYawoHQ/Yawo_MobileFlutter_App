@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_app/screen/HomePage/homePage.dart';
+import 'package:mobile_app/screen/HomePage/homePage2.dart';
 import 'package:mobile_app/screen/auth_screens/change_password_screen.dart';
 import 'package:mobile_app/screen/auth_screens/change_password_success_screen.dart';
 import 'package:mobile_app/screen/auth_screens/change_username_signup_screen.dart';
@@ -63,7 +64,7 @@ class MyApp extends StatelessWidget {
             ImproveFeedScreen.routeName: (context) => const ImproveFeedScreen(),
             BottomNavigation.routeName: (context) => const BottomNavigation(),
             HomePage.routeName: (context) => const HomePage(),
-            // TabScreen.routeName: (context) => const TabScreen(),
+            HomePageFeeds.routeName: (context) => const HomePageFeeds(),
           },
         ));
   }
