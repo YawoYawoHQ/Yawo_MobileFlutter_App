@@ -63,7 +63,8 @@ class HomePagePosts extends StatelessWidget {
               onPressed: threeDotsOnTap,
               child: Text(
                 threeDots,
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               )),
         ),
         Padding(
@@ -90,7 +91,8 @@ class HomePagePosts extends StatelessWidget {
                 // contentPadding: EdgeInsets.zero,
                 leading: GestureDetector(
                     onTap: onTapLike,
-                    child: Icon(Icons.favorite_border_outlined, size: 15)),
+                    child:
+                        const Icon(Icons.favorite_border_outlined, size: 15)),
                 title: Text(
                   '40 likes',
                   style: TextStyle(color: Colors.grey.shade500, fontSize: 10),
