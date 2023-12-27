@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/screen/HomePage/Widgets/suggestedForYouCards.dart';
+import 'package:mobile_app/screen/HomePage/makeApost.dart';
 
 class HomePage extends StatelessWidget {
   static const routeName = '/homePage';
@@ -11,16 +12,18 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
       floatingActionButton: FloatingActionButton(
-          child: Icon(
+          child: const Icon(
             Icons.add,
             color: Colors.white,
           ),
           // elevation: 0,
           disabledElevation: 0,
-          shape: CircleBorder(),
+          shape: const CircleBorder(),
           autofocus: true,
           backgroundColor: Colors.deepOrange,
-          onPressed: () {}),
+          onPressed: () {
+            Navigator.of(context).pushNamed(PostPage.routeName);
+          }),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
           // physics: const BouncingScrollPhysics(),
@@ -28,7 +31,7 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.only(left: 20.0),
             child: InkWell(
@@ -36,7 +39,7 @@ class HomePage extends StatelessWidget {
               child: CircleAvatar(
                 radius: 27,
                 backgroundColor: Theme.of(context).primaryColor,
-                child: CircleAvatar(
+                child: const CircleAvatar(
                   radius: 25,
                   backgroundImage: AssetImage('assets/images/Profiles.png'),
                 ),
@@ -78,21 +81,21 @@ class HomePage extends StatelessWidget {
                   fontSize: 16, color: Colors.black, letterSpacing: 0),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           SizedBox(
             height: size.width * 0.55,
             child: ListView.separated(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.symmetric(horizontal: 24.0),
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 itemBuilder: (context, index) {
-                  return SuggestedForYouCards();
+                  return const SuggestedForYouCards();
                 },
-                separatorBuilder: (context, index) =>
-                    Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                separatorBuilder: (context, index) => const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10)),
                 itemCount: 7),
           )
         ],

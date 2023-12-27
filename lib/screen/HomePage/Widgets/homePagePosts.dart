@@ -69,10 +69,16 @@ class HomePagePosts extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(left: 20.0),
-          child: Text(
-            post,
-            textAlign: TextAlign.start,
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              post,
+              //  textAlign: TextAlign.start,
+            ),
           ),
+        ),
+        SizedBox(
+          height: 5,
         ),
         if (userPicAssetImage != null)
           Image.asset(
